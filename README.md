@@ -67,17 +67,27 @@ The first entry is the plugin's server, the second a server added with
 - **Nothing runs on your machine by itself.** The plugin has no hooks, scripts
   or bundled binaries: two skills (`/vigilia:fix`, `/vigilia:install`, plain
   instructions to Claude) and one MCP server declaration.
-- **One network destination:** `https://app.getvigilia.com/mcp`, Vigilia's own
-  server. You sign in with OAuth; Claude Code keeps the resulting access token
-  in its own credential store, never in a project file. Revoke it any time in
-  Vigilia → Settings → Connected AI.
+- **One network destination for the plugin itself:** `https://app.getvigilia.com/mcp`,
+  Vigilia's own server. You sign in with OAuth; Claude Code keeps the resulting
+  access token in its own credential store, never in a project file. Revoke it
+  any time in Vigilia → Settings → Connected AI.
 - **Edits happen in your project, in your session:** `/vigilia:install` adds
   Vigilia's script tag (and, only if you already have one, a CSP allowance) to
   your code for you to review and commit. `/vigilia:fix` changes whatever
   your code needs to fix the incident. Nothing is deployed for you.
-- The one tool that writes to Vigilia is `mark_fixed`, which marks an incident
-  as fixed so Vigilia can watch for it to come back. Claude Code asks before it
-  runs.
+- **The script tag talks to Vigilia too.** Once you deploy it, your site loads
+  `vigilia.js` from `https://cdn.getvigilia.com` and your visitors' browsers
+  send error reports (scrubbed of emails, tokens and card numbers before they
+  are stored) back to Vigilia. That is the product working, not the plugin
+  phoning home, but it is a second host, so it is listed here.
+- **Four tools write to Vigilia, never to your site or code:** `add_app`
+  creates an app record and starts uptime checks on its address;
+  `create_server_key` makes the secret key for reporting backend errors (shown
+  once; Pro plan); `mark_fixed` marks an incident fixed so Vigilia can watch for
+  it to come back; `check_install` fetches your live site's public pages and
+  records the result on the app. The other seven tools only read. With
+  read-only access, the first three are unavailable. Claude Code asks before
+  each tool runs.
 
 ## Privacy and support
 
