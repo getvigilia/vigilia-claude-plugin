@@ -1,0 +1,15 @@
+{
+  "name": "vigilia",
+  "displayName": "Vigilia",
+  "version": "1.3.0",
+  "description": "Fix what breaks in your live app from Claude Code: Vigilia's plain-language diagnoses, the evidence and a fix prompt for each incident — and confirmation, from real traffic, that your fix held.",
+  "author": {
+    "name": "Vigilia",
+    "email": "support@getvigilia.com",
+    "url": "https://getvigilia.com"
+  },
+  "homepage": "https://getvigilia.com",
+  "license": "MIT",
+  "icon": "./icon.png",
+  "keywords": ["monitoring", "errors", "incidents", "production", "mcp", "debugging"]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "vigilia",
+  "description": "The Vigilia plugin for Claude Code: fix what breaks in your live app, and have Vigilia confirm the fix held.",
+  "owner": {
+    "name": "Vigilia",
+    "email": "support@getvigilia.com",
+    "url": "https://getvigilia.com"
+  },
+  "plugins": [
+    {
+      "name": "vigilia",
+      "source": "./",
+      "description": "Fix what breaks in your live app from Claude Code: Vigilia's plain-language diagnoses, the evidence and a fix prompt for each incident, and confirmation from real traffic that your fix held."
+    }
+  ]
+}

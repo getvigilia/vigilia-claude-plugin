@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "vigilia": {
+      "type": "http",
+      "url": "https://app.getvigilia.com/mcp"
+    }
+  }
+}
